@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fff1e7;
+  --surface: #fff7f1;
+  --text: #3b1f0f;
+  --muted: #7a5b44;
+  --accent: #f1782c;
+  --primary: #d1530f;
+  --secondary: #f6b684;
+  --border: #e9d3c1;
+  --hover: #f2d1b6;
+  --success: #3f7a45;
+  --warning: #d27b18;
+  --danger: #b23b2c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root,
+  html[data-theme="dark"] {
+    --background: #1a1410;
+    --surface: #2a1f18;
+    --text: #f5e6d3;
+    --muted: #b8a499;
+    --accent: #ff9a5c;
+    --primary: #ff7d3f;
+    --secondary: #f0a375;
+    --border: #442f22;
+    --hover: #3d2f25;
+    --success: #5ca068;
+    --warning: #e89c35;
+    --danger: #d4635a;
+  }
+}
+
+html[data-theme="dark"] {
+  --background: #1a1410;
+  --surface: #2a1f18;
+  --text: #f5e6d3;
+  --muted: #b8a499;
+  --accent: #ff9a5c;
+  --primary: #ff7d3f;
+  --secondary: #f0a375;
+  --border: #442f22;
+  --hover: #3d2f25;
+  --success: #5ca068;
+  --warning: #e89c35;
+  --danger: #d4635a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark !important;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--background) 0%, color-mix(in srgb, var(--background) 80%, transparent) 100%);
+  color: var(--text);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+  will-change: background-color;
+}
+
+::selection {
+  background: var(--accent);
+  color: white;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.section-shell {
+  margin: 0 auto;
+  max-width: 1120px;
+  padding: 5rem 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .section-shell {
+    padding: 3rem 1rem;
+  }
+}
+
+.surface-card {
+  border-radius: 2rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-blob {
+  background: radial-gradient(circle at top left, rgba(241, 120, 44, 0.25), transparent 55%);
+}
+
+@media (max-width: 768px) {
+  .hero-blob {
+    background: radial-gradient(circle at top left, rgba(241, 120, 44, 0.15), transparent 70%);
+  }
+}
